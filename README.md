@@ -7,7 +7,7 @@ of Microsoft's <a href="http://aspnetoptimization.codeplex.com/" target="_blank"
 @Injector.InjectionPoint("ScriptFiles") and @Injector.InjectionPoint("StyleFiles") where you want 
 all of these files to appear. (Usually they appear in the &lt;head&gt; tag, although its also common
 to place script files at the end of the HTML.)</li>
-<li>A View or Html Helper can inject its own script and style sheet files and know they will appear 
+<li>A View or HTML Helper can inject its own script and style sheet files and know they will appear 
 with all other script or style sheet files.</li>
 <li>Duplicate requests for a file will be omitted. This is especially useful for HTML Helpers
 which will register the files they need with each usage.</li>
@@ -20,12 +20,15 @@ ContentInjector can order them to ensure dependencies appear earlier.</li>
 <li>Web Optimization Framework 1.0, available through NuGet or <a href="http://aspnetoptimization.codeplex.com/">here</a>.</li>
 </ul>
 <h2>Overview</h2>
-<p>This library extends the Injection Points for "ScriptFiles" and "StyleFiles". Normally when working
+<p>This library extends the Injection Points for "ScriptFiles" and "StyleFiles" within ContentInjector. Normally when working
 with Web Optimization Framework, you add @Scripts.Render("bundle name") and @Styles.Render("bundle name")
 into your View to have those bundles converted into HTML.</p>
 <p>When using Content Injector, add Injector.ScriptBundle("bundle name") and Injector.StyleBundle("bundle name")
 into your View like this:</p>
-<pre style='background:#FFEFE6;font-size:10pt;font-family:"Lucida Console"'>@{<br />&nbsp;&nbsp;&nbsp;Injector.ScriptBundle("~/Scripts/jquery");<br />&nbsp;&nbsp;&nbsp;Injector.ScriptBundle("~/Content/css");<br />}</pre><br />
+<pre style='background:#FFEFE6;font-size:10pt;font-family:"Lucida Console"'>@{<br />&nbsp;&nbsp;&nbsp;Injector.ScriptBundle("~/Scripts/jquery");<br />&nbsp;&nbsp;&nbsp;Injector.StyleBundle("~/Content/css");<br />}</pre>
+<p>You can also add a string array containing multiple bundle names like this:</p>
+<pre style='background:#FFEFE6;font-size:10pt;font-family:"Lucida Console"'>@{<br />&nbsp;&nbsp;&nbsp;Injector.ScriptBundle(new string[] {"~/Scripts/jquery", "~/Scripts/Modernizer"});<br />}</pre>
+
 <p>A typical master page looks like this:</p>
 
 <pre style='background:#FFEFE6'><span
@@ -121,7 +124,7 @@ style='font-size:10pt;font-family:"Lucida Console";color:black'></span></pre>
 are managed by the default features of Content Injector for ASP.NET MVC.</p>
 <h2>Getting Started</h2>
 <ul type='disc'>
-<li>Install this library using NuGet or add its assembly from <a href="" target="_blank"></a>here.</li>
+<li>Install this library using NuGet or add its assembly from <a href="https://github.com/plblum/ContentInjector.WOF/Assemblies/ContentInjector.WOF.dll?Raw=true" target="_blank"></a>here.</li>
 <li>If you did not install using NuGet, also add Content Injector and Web Optimization Framework.</li>
 <li>Configure the Bundles features of Web Optimization Framework. Please refer to the 
 <a href="http://aspnetoptimization.codeplex.com/documentation" target="_blank">documentation for
