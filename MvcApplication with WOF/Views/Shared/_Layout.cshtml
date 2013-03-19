@@ -1,0 +1,22 @@
+﻿@{
+    Injector.ScriptBundle("~/bundles/jquery");
+    Injector.ScriptBundle("~/bundles/modernizr");
+    Injector.StyleBundle("~/Content/css");
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+
+    <meta charset="utf-8" />
+   @Injector.InjectionPoint("MetaTags")
+   @Injector.InjectionPoint("StyleFiles")
+   @Injector.InjectionPoint("ScriptFiles")
+</head>
+
+<body>
+    @Injector.InjectionPoint("ScriptBlocks", "Upper")
+    @RenderBody()
+    @Injector.InjectionPoint("ScriptBlocks", "Lower")
+</body>
+</html>
