@@ -124,7 +124,7 @@ style='font-size:10pt;font-family:"Lucida Console";color:black'></span></pre>
 are managed by the default features of Content Injector for ASP.NET MVC.</p>
 <h2>Getting Started</h2>
 <ul type='disc'>
-<li>Install this library using NuGet or add its assembly from <a href="https://github.com/plblum/ContentInjector.WOF/Assemblies/ContentInjector.WOF.dll?Raw=true" target="_blank"></a>here.</li>
+<li>Install this library using NuGet or add its assembly from <a href="https://github.com/plblum/ContentInjector.WOF/blob/master/Assemblies/ContentInjector.WOF.dll?raw=true" target="_blank">here</a>.</li>
 <li>If you did not install using NuGet, also add Content Injector and Web Optimization Framework.</li>
 <li>Configure the Bundles features of Web Optimization Framework. Please refer to the 
 <a href="http://aspnetoptimization.codeplex.com/documentation" target="_blank">documentation for
